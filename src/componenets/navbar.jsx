@@ -20,6 +20,29 @@ const Navbar = () => {
   };
 
   return (
+
+    <Box sx={{ flexGrow: 1 }}>
+      {/* <FormGroup>
+        <FormControlLabel
+          control={
+            <Switch
+              checked={auth}
+              onChange={handleChange}
+              aria-label="login switch"
+            />
+          }
+          label={auth ? 'Logout' : 'Login'}
+        />
+      </FormGroup> */}
+      <AppBar position="static">
+        <Toolbar>
+          <IconButton
+            size="large"
+            edge="start"
+            color="inherit"
+            aria-label="menu"
+            sx={{ mr: 2 }}
+
     <AppBar position="sticky" top="0" sx={{ backgroundColor: '#FFFFFF', boxShadow: '0px 4px 5px rgba(0, 0, 0, 0.3)' }}>
       <Container>
         <Toolbar sx={{ justifyContent: 'space-between' }}>
@@ -34,6 +57,7 @@ const Navbar = () => {
             aria-haspopup="true"
             onMouseOver={handleTributeMenuOpen}
             sx={{ color: '#005826' }}
+
           >
             Tribute
           </Button>
