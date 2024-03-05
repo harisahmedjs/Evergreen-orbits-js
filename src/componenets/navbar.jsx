@@ -1,6 +1,7 @@
 import React from 'react';
-import { AppBar, Container, Toolbar, Typography, Button, IconButton, Menu, MenuItem } from '@mui/material';
+import { AppBar, Toolbar, Typography, Button, IconButton, Menu, MenuItem, Box } from '@mui/material';
 import { Search } from '@mui/icons-material';
+import CustomButton from './button';
 
 const Navbar = () => {
   const [tributeMenuAnchor, setTributeMenuAnchor] = React.useState(null);
@@ -20,108 +21,116 @@ const Navbar = () => {
   };
 
   return (
-
-    <Box sx={{ flexGrow: 1 }}>
-      {/* <FormGroup>
-        <FormControlLabel
-          control={
-            <Switch
-              checked={auth}
-              onChange={handleChange}
-              aria-label="login switch"
-            />
-          }
-          label={auth ? 'Logout' : 'Login'}
-        />
-      </FormGroup> */}
-      <AppBar position="static">
-        <Toolbar>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            sx={{ mr: 2 }}
-
     <AppBar position="sticky" top="0" sx={{ backgroundColor: '#FFFFFF', boxShadow: '0px 4px 5px rgba(0, 0, 0, 0.3)' }}>
-      <Container>
-        <Toolbar sx={{ justifyContent: 'space-between' }}>
-          <Typography variant="h6" sx={{ color: '#005826' }}>
-            EvergreenOrbit
-          </Typography>
+      <Toolbar sx={{ justifyContent: 'space-around' }}>
+        <Typography variant="h4" sx={{ color: '#005826' }}>
+          EvergreenOrbit
+        </Typography>
 
-          <Button
-            variant="text"
-            color="primary"
-            aria-controls="tribute-menu"
-            aria-haspopup="true"
-            onMouseOver={handleTributeMenuOpen}
-            sx={{ color: '#005826' }}
+        <Button
+          variant="text"
+          color="primary"
+          aria-controls="tribute-menu"
+          aria-haspopup="true"
+          onMouseOver={handleTributeMenuOpen}
+          sx={{ color: '#333333', marginLeft: '35px' }}
+        >
+          How it Works
+        </Button>
 
-          >
-            Tribute
-          </Button>
-          <Menu
-            id="tribute-menu"
-            anchorEl={tributeMenuAnchor}
-            open={Boolean(tributeMenuAnchor)}
-            onClose={handleMenuClose}
-            MenuListProps={{ 'aria-labelledby': 'basic-button' }}
-            anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
-            transformOrigin={{ vertical: 'bottom', horizontal: 'center' }}
-          >
-            <MenuItem onClick={handleMenuClose} sx={{ color: '#005826' }}>
-              Create a Tribute
-            </MenuItem>
-          </Menu>
+        <Menu
+          id="tribute-menu"
+          anchorEl={tributeMenuAnchor}
+          open={Boolean(tributeMenuAnchor)}
+          onClose={handleMenuClose}
+          sx={{ borderRadius: "10px", marginTop: "4px" ,size:"2px"}}
+        >
+          <MenuItem onClick={handleMenuClose} sx={{ color: '#333333' }}>
+             How It Works
+          </MenuItem> <MenuItem onClick={handleMenuClose} sx={{ color: '#333333' , fontWeight: "600"}}>
+             How Evergreen works
+          </MenuItem><MenuItem onClick={handleMenuClose} sx={{ color: '#333333' }}>
+             How trees are planted
+          </MenuItem><MenuItem onClick={handleMenuClose} sx={{ color: '#333333' }}>
+             Why publish an obituary online
+          </MenuItem><MenuItem onClick={handleMenuClose} sx={{ color: '#333333' , fontWeight: "600"}}>
+             Getting Started
+          </MenuItem><MenuItem onClick={handleMenuClose} sx={{ color: '#333333' }}>
+             Publish an obituary
+          </MenuItem><MenuItem onClick={handleMenuClose} sx={{ color: '#333333' }}>
+             Post a Memory
+          </MenuItem>
 
-          <Button
-            variant="text"
-            color="primary"
-            aria-controls="about-menu"
-            aria-haspopup="true"
-            onMouseEnter={handleAboutMenuOpen}
-            onMouseLeave={handleMenuClose}
-            sx={{ color: '#005826' }}
-          >
+        </Menu>
+
+        <Button
+          variant="text"
+          color="primary"
+          aria-controls="about-menu"
+          aria-haspopup="true"
+          onMouseEnter={handleAboutMenuOpen}
+          sx={{ color: '#333333' }}
+        >
+          About
+        </Button>
+
+        <Menu
+          id="about-menu"
+          anchorEl={aboutMenuAnchor}
+          open={Boolean(aboutMenuAnchor)}
+          onClose={handleMenuClose}
+        >
+          <MenuItem onClick={handleMenuClose} sx={{ color: '#333333' }}>
             About
-          </Button>
-          <Menu
-            id="about-menu"
-            anchorEl={aboutMenuAnchor}
-            open={Boolean(aboutMenuAnchor)}
-            onClose={handleMenuClose}
-            MenuListProps={{ 'aria-labelledby': 'basic-button' }}
-            anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
-            transformOrigin={{ vertical: 'bottom', horizontal: 'center' }}
-          >
-            <MenuItem onClick={handleMenuClose} sx={{ color: '#005826' }}>
-              About Everyone Tribute
-            </MenuItem>
-            <MenuItem onClick={handleMenuClose} sx={{ color: '#005826' }}>
-              How It Works
-            </MenuItem>
-            <MenuItem onClick={handleMenuClose} sx={{ color: '#005826' }}>
-              FAQ
-            </MenuItem>
-          </Menu>
+          </MenuItem><MenuItem onClick={handleMenuClose} sx={{ color: '#333333' , fontWeight: "600"}}>
+             Getting Started
+          </MenuItem>
+          <MenuItem onClick={handleMenuClose} sx={{ color: '#333333' }}>
+             Publish an obituary
+          </MenuItem>
+          <MenuItem onClick={handleMenuClose} sx={{ color: '#333333' }}>
+             Post a Memory
+          </MenuItem>
+          <MenuItem onClick={handleMenuClose} sx={{ color: '#333333' , fontWeight: "600"}}>
+             Resource
+          </MenuItem>
+          <MenuItem onClick={handleMenuClose} sx={{ color: '#333333' , fontWeight: "600"}}>
+             Frequently Asked Questions
+          </MenuItem>
+          <MenuItem onClick={handleMenuClose} sx={{ color: '#333333', fontWeight: "600" }}>
+             Contact Us
+          </MenuItem>
+        </Menu>
 
-          <Typography variant="body1" sx={{ marginLeft: 2, color: '#005826' }}>
-            Simple Pricing
-          </Typography>
+        <Typography variant="body1" sx={{ marginLeft: 2, color: '#333333' }}>
+          Simple Pricing
+        </Typography>
 
-          <IconButton color="primary" sx={{ marginLeft: 'auto' }}>
-            <Search sx={{ color: '#005826' }} />
-          </IconButton>
+        <IconButton color="primary" sx={{ marginLeft: 'auto' ,  marginRight: "18px"  }}>
+          <Search sx={{ color: '#005826' }} />
+        </IconButton>
 
-          <Button variant="contained" color="primary" sx={{ marginLeft: 1 }}>
-            Sign In
-          </Button>
-          <Button variant="contained" color="primary" sx={{ marginLeft: 1 }}>
-            Sign Up
-          </Button>
-        </Toolbar>
-      </Container>
+        <CustomButton />
+       
+        <Typography>
+        <Button
+  sx={{
+    background: 'transparent',
+    color: "#378752",
+    border: "1px solid #378752",
+    marginLeft: "15px", 
+    '&:hover': {
+      background: 'black',
+      color: "white",
+    },
+    borderRadius: '50px',
+  }}
+  variant="contained"
+>
+  Login
+</Button>
+        </Typography>
+      </Toolbar>
     </AppBar>
   );
 };

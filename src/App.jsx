@@ -1,24 +1,24 @@
 import React from 'react'
 
 import Homepage from './screens/Homepage'
-// import Footer from './componenets/Footer'
-import MenuAppBar from './componenets/navbar'
-
 import Footer from './componenets/Footer'
-import Navbar from './componenets/Navbar'
+import Navbar from './componenets/navbar'
+
+
+
  
 
 const App = () => {
   return (
 
     <>
-
-      <MenuAppBar />
+<Navbar />
+    
       <Homepage />
 
 
-      <Navbar />
-      {/* <Footer /> */}
+      
+      <Footer />
 
     </>
 
