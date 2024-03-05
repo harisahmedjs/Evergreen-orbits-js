@@ -1,13 +1,13 @@
 import React from 'react'
-import MenuAppBar from './componenets/Navbar'
 import Footer from './componenets/Footer'
+import Navbar from './componenets/Navbar'
 
 const App = () => {
   return (
 
     <>
-      {/* <MenuAppBar /> */}
-      <Footer />
+      <Navbar />
+      {/* <Footer /> */}
     </>
 
   )

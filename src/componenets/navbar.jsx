@@ -1,96 +1,105 @@
-import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
-import AccountCircle from '@mui/icons-material/AccountCircle';
-import Switch from '@mui/material/Switch';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import FormGroup from '@mui/material/FormGroup';
-import MenuItem from '@mui/material/MenuItem';
-import Menu from '@mui/material/Menu';
+import React from 'react';
+import { AppBar, Container, Toolbar, Typography, Button, IconButton, Menu, MenuItem } from '@mui/material';
+import { Search } from '@mui/icons-material';
 
- function MenuAppBar() {
-  const [auth, setAuth] = React.useState(true);
-  const [anchorEl, setAnchorEl] = React.useState(null);
+const Navbar = () => {
+  const [tributeMenuAnchor, setTributeMenuAnchor] = React.useState(null);
+  const [aboutMenuAnchor, setAboutMenuAnchor] = React.useState(null);
 
-  const handleChange = (event) => {
-    setAuth(event.target.checked);
+  const handleTributeMenuOpen = (event) => {
+    setTributeMenuAnchor(event.currentTarget);
   };
 
-  const handleMenu = (event) => {
-    setAnchorEl(event.currentTarget);
+  const handleAboutMenuOpen = (event) => {
+    setAboutMenuAnchor(event.currentTarget);
   };
 
-  const handleClose = () => {
-    setAnchorEl(null);
+  const handleMenuClose = () => {
+    setTributeMenuAnchor(null);
+    setAboutMenuAnchor(null);
   };
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <FormGroup>
-        <FormControlLabel
-          control={
-            <Switch
-              checked={auth}
-              onChange={handleChange}
-              aria-label="login switch"
-            />
-          }
-          label={auth ? 'Logout' : 'Login'}
-        />
-      </FormGroup>
-      <AppBar position="static">
-        <Toolbar>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            sx={{ mr: 2 }}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Photos
+    <AppBar position="sticky" top="0" sx={{ backgroundColor: '#FFFFFF', boxShadow: '0px 4px 5px rgba(0, 0, 0, 0.3)' }}>
+      <Container>
+        <Toolbar sx={{ justifyContent: 'space-between' }}>
+          <Typography variant="h6" sx={{ color: '#005826' }}>
+            EvergreenOrbit
           </Typography>
-          {auth && (
-            <div>
-              <IconButton
-                size="large"
-                aria-label="account of current user"
-                aria-controls="menu-appbar"
-                aria-haspopup="true"
-                onClick={handleMenu}
-                color="inherit"
-              >
-                <AccountCircle />
-              </IconButton>
-              <Menu
-                id="menu-appbar"
-                anchorEl={anchorEl}
-                anchorOrigin={{
-                  vertical: 'top',
-                  horizontal: 'right',
-                }}
-                keepMounted
-                transformOrigin={{
-                  vertical: 'top',
-                  horizontal: 'right',
-                }}
-                open={Boolean(anchorEl)}
-                onClose={handleClose}
-              >
-                <MenuItem onClick={handleClose}>Profile</MenuItem>
-                <MenuItem onClick={handleClose}>My account</MenuItem>
-              </Menu>
-            </div>
-          )}
+
+          <Button
+            variant="text"
+            color="primary"
+            aria-controls="tribute-menu"
+            aria-haspopup="true"
+            onMouseOver={handleTributeMenuOpen}
+            sx={{ color: '#005826' }}
+          >
+            Tribute
+          </Button>
+          <Menu
+            id="tribute-menu"
+            anchorEl={tributeMenuAnchor}
+            open={Boolean(tributeMenuAnchor)}
+            onClose={handleMenuClose}
+            MenuListProps={{ 'aria-labelledby': 'basic-button' }}
+            anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
+            transformOrigin={{ vertical: 'bottom', horizontal: 'center' }}
+          >
+            <MenuItem onClick={handleMenuClose} sx={{ color: '#005826' }}>
+              Create a Tribute
+            </MenuItem>
+          </Menu>
+
+          <Button
+            variant="text"
+            color="primary"
+            aria-controls="about-menu"
+            aria-haspopup="true"
+            onMouseEnter={handleAboutMenuOpen}
+            onMouseLeave={handleMenuClose}
+            sx={{ color: '#005826' }}
+          >
+            About
+          </Button>
+          <Menu
+            id="about-menu"
+            anchorEl={aboutMenuAnchor}
+            open={Boolean(aboutMenuAnchor)}
+            onClose={handleMenuClose}
+            MenuListProps={{ 'aria-labelledby': 'basic-button' }}
+            anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
+            transformOrigin={{ vertical: 'bottom', horizontal: 'center' }}
+          >
+            <MenuItem onClick={handleMenuClose} sx={{ color: '#005826' }}>
+              About Everyone Tribute
+            </MenuItem>
+            <MenuItem onClick={handleMenuClose} sx={{ color: '#005826' }}>
+              How It Works
+            </MenuItem>
+            <MenuItem onClick={handleMenuClose} sx={{ color: '#005826' }}>
+              FAQ
+            </MenuItem>
+          </Menu>
+
+          <Typography variant="body1" sx={{ marginLeft: 2, color: '#005826' }}>
+            Simple Pricing
+          </Typography>
+
+          <IconButton color="primary" sx={{ marginLeft: 'auto' }}>
+            <Search sx={{ color: '#005826' }} />
+          </IconButton>
+
+          <Button variant="contained" color="primary" sx={{ marginLeft: 1 }}>
+            Sign In
+          </Button>
+          <Button variant="contained" color="primary" sx={{ marginLeft: 1 }}>
+            Sign Up
+          </Button>
         </Toolbar>
-      </AppBar>
-    </Box>
+      </Container>
+    </AppBar>
   );
-}
-export default MenuAppBar
+};
+
+export default Navbar;
