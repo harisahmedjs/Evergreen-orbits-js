@@ -30,7 +30,7 @@ import Menu from '@mui/material/Menu';
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <FormGroup>
+      {/* <FormGroup>
         <FormControlLabel
           control={
             <Switch
@@ -41,7 +41,7 @@ import Menu from '@mui/material/Menu';
           }
           label={auth ? 'Logout' : 'Login'}
         />
-      </FormGroup>
+      </FormGroup> */}
       <AppBar position="static">
         <Toolbar>
           <IconButton

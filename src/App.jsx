@@ -1,13 +1,15 @@
 import React from 'react'
-import MenuAppBar from './componenets/Navbar'
-import Footer from './componenets/Footer'
+import Homepage from './screens/Homepage'
+// import Footer from './componenets/Footer'
+import MenuAppBar from './componenets/navbar'
 
 const App = () => {
   return (
 
     <>
-      {/* <MenuAppBar /> */}
-      <Footer />
+      <MenuAppBar />
+      <Homepage />
+
     </>
 
   )
