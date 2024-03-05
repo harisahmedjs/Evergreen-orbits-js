@@ -1,96 +1,117 @@
 import React from 'react';
-import { Container, Box, Typography, Link } from '@mui/material';
+import { Box, Container, Grid, Typography, IconButton } from '@mui/material';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import YouTubeIcon from '@mui/icons-material/YouTube';
 
 const Footer = () => {
   return (
     <Box
       sx={{
-        bgcolor: '#f5f5f5',
-        py: 4,
+        bgcolor: "#394A4D",
+        color: "white",
+        paddingTop: "70px",
+        paddingBottom: "20px", // Increased padding for more space
+        width: "full",
+        minHeight: "370px", // Set a minimum height to ensure the hr spans the entire width
+        position: 'relative', // Set position to relative
       }}
     >
-      <Container maxWidth="lg">
-        <Box
-          sx={{
-            display: 'flex',
-            flexWrap: 'wrap',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-          }}
-        >
-          <Box>
-            <Typography variant="h6" color="text.primary">
-              Evergreen Tribute
+      <Container>
+        <Grid container spacing={3}>
+          {/* Column 1 - Evergreen */}
+          <Grid item xs={12}>
+            <Typography variant="h5" sx={{ marginBottom: '10px' }}>
+              EvergreenOrbits
             </Typography>
-            <Typography variant="body2" color="text.secondary">
-              Connect with us:
-            </Typography>
-            <Box sx={{ display: 'flex', alignItems: 'center' }}>
-              <Link
-                href="#"
-                color="text.secondary"
-                sx={{
-                  mr: 1,
-                  '&:hover': {
-                    textDecoration: 'none',
-                  },
-                }}
+          </Grid>
+
+          {/* Follow Us */}
+          <Grid item xs={12} md={3} sx={{ display: 'flex', flexDirection: 'column' , marginTop: "25px"}}>
+            <Typography variant="h6">Connect :</Typography>
+            <Box sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center' , gap: "10px"}}>
+              <IconButton
+                href="https://www.facebook.com/"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                <i className="bi bi-facebook" />
-              </Link>
-              <Link
-                href="#"
-                color="text.secondary"
-                sx={{
-                  mr: 1,
-                  '&:hover': {
-                    textDecoration: 'none',
-                  },
-                }}
+                <FacebookIcon sx={{ color: 'white' }} />
+              </IconButton>
+              <IconButton
+                href="https://www.instagram.com/"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                <i className="bi bi-twitter" />
-              </Link>
-              <Link
-                href="#"
-                color="text.secondary"
-                sx={{
-                  mr: 1,
-                  '&:hover': {
-                    textDecoration: 'none',
-                  },
-                }}
+                <InstagramIcon sx={{ color: 'white' }} />
+              </IconButton>
+              <IconButton
+                href="https://twitter.com/"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                <i className="bi bi-instagram" />
-              </Link>
+                <TwitterIcon sx={{ color: 'white' }} />
+              </IconButton>
+              <IconButton
+                href="https://www.youtube.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <YouTubeIcon sx={{ color: 'white' }} />
+              </IconButton>
             </Box>
-          </Box>
-          <Box>
-            <Typography variant="body1" color="text.secondary">
-              &copy; 2023 Evergreen Tribute. All Rights Reserved.
+          </Grid>
+
+          {/* Columns 2, 3, 4 */}
+        <Grid item xs={12} md={9} sx={ {marginTop: "25px" ,}}>
+            <Grid container spacing={3}>
+              {/* Column 2 */}
+              <Grid item xs={12} md={4}>
+                <Typography variant="h6">Tributes</Typography>
+                <Typography>Create a Tribute</Typography>
+              </Grid>
+
+              {/* Column 3 */}
+              <Grid item xs={12} md={4}>
+                <Typography variant="h6">About</Typography>
+                <Typography sx={{marginTop:"4px"}}>About Everyone Tribute</Typography>
+                <Typography sx={{marginTop:"4px"}}>How It Works</Typography>
+                <Typography sx={{marginTop:"4px"}}>FAQ</Typography>
+              </Grid>
+
+              {/* Column 4 */}
+              <Grid item xs={12} md={4}>
+                <Typography variant="h6">Support</Typography>
+                <Typography sx={{marginTop:"4px"}}>Contact Us</Typography>
+              </Grid>
+            </Grid>
+          </Grid>
+        </Grid>
+
+        {/* Horizontal Line */}
+        <hr
+          style={{
+            borderColor: 'white',
+            width: '100%', // Span the entire width
+            margin: '20px 0',
+            marginTop : "85px",
+            boxSizing: 'content-box' // Add margin to make it visible
+          }}
+        />
+
+        {/* Copyright and Terms/Privacy */}
+        <Grid container spacing={3}>
+          <Grid item xs={12} md={6}>
+            <Typography variant="caption">
+              © 2023 Evergreen Tribute. All Rights Reserved.
             </Typography>
-            <Typography variant="body2" color="text.secondary">
-              <Link href="/about" color="inherit">
-                About
-              </Link>{' '}
-              |{' '}
-              <Link href="/how-it-works" color="inherit">
-                How It Works
-              </Link>{' '}
-              |{' '}
-              <Link href="/faq" color="inherit">
-                FAQ
-              </Link>{' '}
-              |{' '}
-              <Link href="/support" color="inherit">
-                Support
-              </Link>{' '}
-              |{' '}
-              <Link href="/terms-privacy-policy" color="inherit">
-                Terms & Privacy Policy
-              </Link>
+          </Grid>
+          <Grid item xs={12} md={6} sx={{ textAlign: 'right' }}>
+            <Typography variant="caption">
+              <span>Terms |</span> <span style={{ marginLeft: '8px' }}>Privacy Policy</span>
             </Typography>
-          </Box>
-        </Box>
+          </Grid>
+        </Grid>
       </Container>
     </Box>
   );
