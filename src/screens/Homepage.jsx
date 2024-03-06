@@ -169,6 +169,7 @@ const Homepage = () => {
       </Box>
       {/* Sec three end */}
 
+
       {/* Sec three III Start */}
       <Box className='mainBox'sx={{display : "flex" , marginLeft: "50px" , marginBottom:"20px" , marginTop:"20px"}} >
         <Box sx={{marginRight : "35px" }}> <img src={GreenTree}  className='imagetree'/> </Box>
@@ -206,10 +207,24 @@ const Homepage = () => {
                 </Typography>
                 <Typography fontSize={16} marginTop={2} fontFamily={'Didot LT Pro, Bold'}>
                 By offering a digital-only solution that plants memorial trees with every obituary, we’re redefining the way loved ones are honored and remembered. At EvergreenObits, we believe in a better way to commemorate life, one that respects both your budget and our planet Earth
+
+      {/* Sec three II Start */}
+      <Box className='mainBox' >
+        <Box> <img src={GreenTree} /> </Box>
+
+        <Box className='Box2'>
+
+          <Card  className='mt-3' sx={{ border: '1px solid lightgray', borderRadius: '20px' }} >
+            <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: 'px', marginTop: '6px', paddingLeft: '10px', paddingRight: '10px', cursor: 'pointer' }}>
+              <Box>
+                <Typography fontSize={20} fontWeight={700}>
+                 
+
                 </Typography>
               </Box>
             </Box>
           </Card>
+
         </Box>
 
          
@@ -217,6 +232,15 @@ const Homepage = () => {
 
       </Box>
       {/* Sec three III end */}
+
+
+        </Box>
+
+
+
+      </Box>
+      {/* Sec three II end */}
+
 
 
 
