@@ -1,12 +1,15 @@
-
 @font-face {
     font-family: 'Didot LT Pro, Bold';
     src        : url('./assets/fonts/Didot\ LT\ Roman\ Regular.ttf');
 }
-.imagetree{
+
+.imagetree {
     width: 450px;
 
 }
-.everlogo{
+
+.everlogo {
     width: 300px;
 }
+
+

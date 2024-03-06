@@ -18,7 +18,7 @@ const App = () => {
 
 
       
-      <Footer />
+      {/* <Footer /> */}
 
     </>
 
