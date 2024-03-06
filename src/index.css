@@ -3,3 +3,10 @@
     font-family: 'Didot LT Pro, Bold';
     src        : url('./assets/fonts/Didot\ LT\ Roman\ Regular.ttf');
 }
+.imagetree{
+    width: 450px;
+
+}
+.everlogo{
+    width: 300px;
+}

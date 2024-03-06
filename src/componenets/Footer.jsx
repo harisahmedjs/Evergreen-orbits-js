@@ -4,6 +4,7 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import YouTubeIcon from '@mui/icons-material/YouTube';
+import whiteLogo from '../assets/ever.png'
 
 const Footer = () => {
   return (
@@ -22,9 +23,7 @@ const Footer = () => {
         <Grid container spacing={3}>
           {/* Column 1 - Evergreen */}
           <Grid item xs={12}>
-            <Typography variant="h5" sx={{ marginBottom: '10px' }}>
-              EvergreenOrbits
-            </Typography>
+           <img src={whiteLogo} className='everlogo' alt="" />
           </Grid>
 
           {/* Follow Us */}
@@ -67,22 +66,22 @@ const Footer = () => {
             <Grid container spacing={3}>
               {/* Column 2 */}
               <Grid item xs={12} md={4}>
-                <Typography variant="h6">Tributes</Typography>
-                <Typography>Create a Tribute</Typography>
+                <Typography variant="h6" fontFamily={'Didot LT Pro, Bold'} fontWeight={600}>Tributes</Typography>
+                <Typography fontFamily={'Didot LT Pro, Bold'}>Create a Tribute</Typography>
               </Grid>
 
               {/* Column 3 */}
               <Grid item xs={12} md={4}>
-                <Typography variant="h6">About</Typography>
-                <Typography sx={{marginTop:"4px"}}>About Everyone Tribute</Typography>
-                <Typography sx={{marginTop:"4px"}}>How It Works</Typography>
-                <Typography sx={{marginTop:"4px"}}>FAQ</Typography>
+                <Typography variant="h6" fontFamily={'Didot LT Pro, Bold'} fontWeight={600}>About</Typography>
+                <Typography sx={{marginTop:"4px"}} fontFamily={'Didot LT Pro, Bold'}>About Everyone Tribute</Typography>
+                <Typography sx={{marginTop:"4px"}} fontFamily={'Didot LT Pro, Bold'}>How It Works</Typography>
+                <Typography sx={{marginTop:"4px"}} fontFamily={'Didot LT Pro, Bold'}>FAQ</Typography>
               </Grid>
 
               {/* Column 4 */}
               <Grid item xs={12} md={4}>
-                <Typography variant="h6">Support</Typography>
-                <Typography sx={{marginTop:"4px"}}>Contact Us</Typography>
+                <Typography variant="h6" fontFamily={'Didot LT Pro, Bold'} fontWeight={600}>Support</Typography>
+                <Typography sx={{marginTop:"4px"}} fontFamily={'Didot LT Pro, Bold'}>Contact Us</Typography>
               </Grid>
             </Grid>
           </Grid>
@@ -102,13 +101,13 @@ const Footer = () => {
         {/* Copyright and Terms/Privacy */}
         <Grid container spacing={3}>
           <Grid item xs={12} md={6}>
-            <Typography variant="caption">
+            <Typography variant="caption" fontFamily={'Didot LT Pro, Bold'}>
               © 2023 Evergreen Tribute. All Rights Reserved.
             </Typography>
           </Grid>
           <Grid item xs={12} md={6} sx={{ textAlign: 'right' }}>
             <Typography variant="caption">
-              <span>Terms |</span> <span style={{ marginLeft: '8px' }}>Privacy Policy</span>
+              <span>Terms </span> <span style={{ marginLeft: '8px' }} fontFamily={'Didot LT Pro, Bold'}>Privacy Policy</span>
             </Typography>
           </Grid>
         </Grid>

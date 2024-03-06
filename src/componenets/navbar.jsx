@@ -2,6 +2,7 @@ import React from 'react';
 import { AppBar, Toolbar, Typography, Button, IconButton, Menu, MenuItem, Box } from '@mui/material';
 import { Search } from '@mui/icons-material';
 import CustomButton from './button';
+import Everlogo from "../assets/everlogo.png"
 
 const Navbar = () => {
   const [tributeMenuAnchor, setTributeMenuAnchor] = React.useState(null);
@@ -23,9 +24,7 @@ const Navbar = () => {
   return (
     <AppBar position="sticky" top="0" sx={{ backgroundColor: '#FFFFFF', boxShadow: '0px 4px 5px rgba(0, 0, 0, 0.3)' }}>
       <Toolbar sx={{ justifyContent: 'space-around' }}>
-        <Typography variant="h4" sx={{ color: '#005826' }}>
-          EvergreenOrbit
-        </Typography>
+      <img src={Everlogo} className='everlogo' alt="" />
 
         <Button
           variant="text"
