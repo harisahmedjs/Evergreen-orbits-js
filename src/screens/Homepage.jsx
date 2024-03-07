@@ -1,21 +1,46 @@
-import { Box, Button, Card, List, Typography } from '@mui/material'
-import React from 'react'
-import backgroundImage from '../assets/treecanopy.svg';
+import { Box, Button, Card, List, Typography , CardMedia} from '@mui/material'
+import React , {useState}from 'react'
+import backgroundImage from "../assets/treecanopy.svg"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowUpFromBracket, faFilePen, faSeedling } from '@fortawesome/free-solid-svg-icons';
 import Air from '../assets/air.png'
+import Air1 from '../assets/air1.jpg'
 import Loved from '../assets/loved.png'
 import reforestation from '../assets/reforestation.png'
+import Plant1 from '../assets/plant1.jpg'
+import BIrd from '../assets/bird1.jpg'
+import Student from '../assets/student1.jpg'
 import Sectwo from '../assets/secimage.png'
 import GreenTree from '../assets/greentree.png'
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
-import { pink } from '@mui/material/colors';
-
+import Navbar from '../componenets/navbar';
+import Footer from '../componenets/Footer';
 
 const Homepage = () => {
+  const phrases = [
+    "Every Evergreen Obituary is an investment in the restoration of our environment.",
+    "Trees are nature’s powerful air purifiers, absorbing harmful pollutants and releasing fresh, oxygen-rich air.",
+    "Our reforestation partners ensure that your memorial trees are part of carefully planned ecosystems.",
+    "Creating an Evergreen Obituary isn’t just about honoring the past; it’s about securing a brighter future for the next generation.",
+  ];
 
+  const additionalPhrases = [
+    "We partner with internationally recognized reforestation partners who work tirelessly to replant trees in deforested areas, reviving lush green landscapes.",
+    "By choosing to plant trees in honor of your loved ones, you’re not only creating a living tribute but actively contributing to a healthier environment.",
+    "These trees create havens for birds, insects, and wildlife, contributing to a more balanced environment.",
+    "Every memorial tree you plant becomes a legacy of hope, ensuring that the Earth we pass on is healthier, greener, and more vibrant.",
+  ];
+  const buttonImages = {
+    1: Plant1,
+    2: Air1,
+    3: BIrd,
+    4: Student,
+  };
 
-
+  const [selectedButton, setSelectedButton] = useState(1);
+  const handleButtonClick = (buttonNumber) => {
+    setSelectedButton(buttonNumber);
+  };
   const styles = {
     container: {
       backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.5), rgba(250, 250, 250, 10)), url(${backgroundImage})`,
@@ -29,6 +54,7 @@ const Homepage = () => {
   };
   return (
     <>
+    <Navbar />
       <Box sx={styles.container}>
 
         {/* text btn start */}
@@ -224,27 +250,72 @@ const Homepage = () => {
     Celebrate Life and Nature
   </Typography>
 
-  <Box width={1196} height={512} bgcolor={"#FFFFFF"}>
-    <Box sx={{
-      display: "flex",
-      marginTop: "330px",
-      marginLeft: "200px",
-    }}>
-      <button className='btn'>Support Reforestation</button>
-      <button className='btn'>Air Quality Improvement</button>
-      <button className='btn'>Enhance Biodiversity</button>
-      <button className='btn'>Cultivate a Better Future</button>
+  <Box width={1196} height={512} bgcolor={'#FFFFFF'}>
+  <Box sx={{ marginLeft: '170px' }}>
+    <CardMedia
+      component="img"
+      image={selectedButton ? buttonImages[selectedButton] : ''} // Empty string when no button is selected
+      alt="Your Image"
+      style={{ width: '900px', marginBottom: '40px' }} // Add margin at top and bottom
+    />
+    <Box>
+      <Button
+        onClick={() => handleButtonClick(1)}
+        sx={{
+          color: selectedButton === 1 ? 'black' : 'initial',
+          borderBottom: selectedButton === 1 ? '2px solid black' : 'initial',
+          fontWeight: selectedButton === 1 ? '600' : 'initial',
+          marginRight: '10px',
+          
+        }}
+      >
+        Support Reforestation
+      </Button>
+      <Button
+        onClick={() => handleButtonClick(2)}
+        sx={{
+          color: selectedButton === 2 ? 'black' : 'initial',
+          borderBottom: selectedButton === 2 ? '2px solid black' : 'initial',
+          fontWeight: selectedButton === 2 ? '600' : 'initial',
+          marginRight: '10px',
+        }}
+      >
+        Air Quality Improvement
+      </Button>
+      <Button
+        onClick={() => handleButtonClick(3)}
+        sx={{
+          color: selectedButton === 3 ? 'black' : 'initial',
+          borderBottom: selectedButton === 3 ? '2px solid black' : 'initial',
+          fontWeight: selectedButton === 3 ? '600' : 'initial',
+          marginRight: '10px',
+        }}
+      >
+        Enhance Biodiversity
+      </Button>
+      <Button
+        onClick={() => handleButtonClick(4)}
+        sx={{
+          color: selectedButton === 4 ? 'black' : 'initial',
+          borderBottom: selectedButton === 4 ? '2px solid black' : 'initial',
+          fontWeight: selectedButton === 4 ? '600' : 'initial',
+          marginRight: '30px',
+        }}
+      >
+        Cultivate a Better Future
+      </Button>
     </Box>
-    <hr/>
-  <Box sx={{ textAlign: 'center',marginTop: "30px" }}>
-    <Typography>
-      Add your text here
+  </Box>
+
+  <Box sx={{ textAlign: 'center', marginTop: '30px' }}>
+    <Typography variant="h6" color="#333333" fontSize="16px">
+      {selectedButton ? phrases[selectedButton - 1] : phrases[0]}
     </Typography>
-    <Typography>
-      Add your text here
+    <Typography variant="body1" color="#333333" fontSize="16px" marginTop="9px">
+      {selectedButton ? additionalPhrases[selectedButton - 1] : additionalPhrases[0]}
     </Typography>
   </Box>
-  </Box>
+</Box>
 </Box>
 
 
@@ -463,7 +534,7 @@ const Homepage = () => {
 </Box>
 </Box>
 {/* sec five V end */}
-
+<Footer />
     </>
   )
 }
