@@ -35,6 +35,10 @@ const Homepage = () => {
             display: 'flex',
             flexDirection: 'column-reverse'
           },
+          '@media screen and (max-width:288px)': {
+            width: '100%',
+
+          },
         }}>
           <Box sx={{
             display: 'flex',
@@ -54,8 +58,8 @@ const Homepage = () => {
               width: '44%', textAlign: 'center', fontSize: '18px', '@media screen and (max-width: 750px)': {
                 fontSize: '20px',
                 textAlign: 'center',
-                width:'100%',
-                padding:'5px'
+                width: '100%',
+                padding: '5px'
               },
             }}>
               Beautiful, sustainable, shareable obituaries that support forests in need, starting at $30
@@ -64,10 +68,10 @@ const Homepage = () => {
               <Button sx={{ background: '#378752', ":hover": { background: '#333333' }, borderRadius: '20px', }} variant="contained">Create Obituary</Button>
             </Typography>
           </Box>
-        {/* text btn end */}
+          {/* text btn end */}
 
-        {/* image sec strat */}
-        <Box className='imagesTop' sx={{
+          {/* image sec strat */}
+          <Box className='imagesTop' sx={{
             display: 'flex',
             alignItems: 'center', flexWrap: 'wrap', justifyContent: 'center', gap: '15px', marginTop: '30px',
             '@media screen and (max-width: 750px)': {
@@ -101,6 +105,9 @@ const Homepage = () => {
                     width: '300px',
                     margin: '0 auto'
 
+                  }, '@media screen and (max-width:288px)': {
+                    width: '260px',
+
                   },
                 }}
               />
@@ -114,6 +121,9 @@ const Homepage = () => {
                   width: '220px', '@media screen and (max-width:468px)': {
                     width: '160px',
                     margin: '0 auto'
+
+                  }, '@media screen and (max-width:288px)': {
+                    width: '120px',
 
                   },
                 }}
@@ -132,11 +142,16 @@ const Homepage = () => {
                 component="img"
                 image={Air}
                 alt="Your Image"
-                sx={{ width: '220px', '@media screen and (max-width:468px)': {
-                width:'160px',
-              margin:'0 auto'
-  
-                }, }}
+                sx={{
+                  width: '220px', '@media screen and (max-width:468px)': {
+                    width: '160px',
+                    margin: '0 auto'
+
+                  }, '@media screen and (max-width:288px)': {
+                    width: '120px',
+
+                  },
+                }}
               />
             </Box>
           </Box>
@@ -149,7 +164,7 @@ const Homepage = () => {
         {/* heading */}
         <Typography variant='h2' textAlign={'center'} fontSize={'40px'} fontFamily={'Didot LT Pro, Bold'} marginTop={5} sx={{
           '@media screen and (max-width:900px)': {
-           fontSize:'28px'
+            fontSize: '28px'
 
           },
         }}>
@@ -166,8 +181,8 @@ const Homepage = () => {
 
           },
         }}>
-        {/* Box one start */}
-        <Box sx={{
+          {/* Box one start */}
+          <Box sx={{
             width: '30%', '@media screen and (max-width:900px)': {
               width: 'auto'
 
@@ -190,16 +205,16 @@ const Homepage = () => {
               </Box>
             </Box>
           </Box>
-        {/* Box one end */}
+          {/* Box one end */}
 
-        {/* Box 2 start  */}
-        <Box sx={{
+          {/* Box 2 start  */}
+          <Box sx={{
             width: '30%', '@media screen and (max-width:900px)': {
               width: 'auto'
 
             },
           }}>
-        <Box sx={{ textAlign: 'center' }}>
+            <Box sx={{ textAlign: 'center' }}>
               <FontAwesomeIcon fontSize={'38px'} color='#378752' icon={faSeedling} />
 
             </Box>
@@ -212,11 +227,11 @@ const Homepage = () => {
               </Box>
             </Box>
           </Box>
-        {/* Box 2 end */}
+          {/* Box 2 end */}
 
 
-        {/* Box 3 start  */}
-        <Box sx={{
+          {/* Box 3 start  */}
+          <Box sx={{
             width: '30%', '@media screen and (max-width:900px)': {
               width: 'auto'
 
@@ -234,11 +249,11 @@ const Homepage = () => {
               </Box>
             </Box>
           </Box>
-        {/* Box 3 end */}
-      </Box>
+          {/* Box 3 end */}
+        </Box>
 
 
-      
+
         <Typography display={'flex'} alignItems={'center'} justifyContent={'center'} padding={2}>
           <Button sx={{ background: '#378752', ":hover": { background: '#333333' }, borderRadius: '20px', }} variant="contained">Create Obituary</Button>
         </Typography>
@@ -251,55 +266,55 @@ const Homepage = () => {
           '@media screen and (max-width:1000px)': {
             display: 'flex',
             flexDirection: 'column-reverse',
-            padding:'20px'
+            padding: '20px'
 
           },
         }} >
 
-      {/* middle Box Start */}
-      <Box className="middleBox">
-        <Typography variant='h2' fontSize={'40px'}
-          fontFamily={'Didot LT Pro, Bold'} fontWeight={'bold'} sx={{
-            '@media screen and (max-width:750px)': {
-              fontSize: '24px',
-              width: 'auto'
+        {/* middle Box Start */}
+        <Box className="middleBox">
+          <Typography variant='h2' fontSize={'40px'}
+            fontFamily={'Didot LT Pro, Bold'} fontWeight={'bold'} sx={{
+              '@media screen and (max-width:750px)': {
+                fontSize: '24px',
+                width: 'auto'
 
-            },
-          }} >
-          Obituaries Rooted in Love and Memorial Trees
-        </Typography>
-        <List>
-          <ul style={{ listStyleType: 'disc', fontSize: '18px' }}>
-            <li>Each Evergreen Obituary is a dynamic canvas where memories come to life and an ever-growing forest of trees begins to flourish.</li>
-            <li>Celebrate their life, share their story, add cherished photos, and plant memorial trees that serve as a living symbol of their legacy.</li>
-            <li>Invite friends and family to contribute memories, photos, and even plant additional trees.
-
-              Start crafting your Evergreen Obituary today..</li>
-          </ul>
-
-        </List>
-        <Box>
-          <Typography display={'flex'} gap={3} sx={{
-            '@media screen and (max-width:480px)': {
-              display:'flex',
-              flexDirection:'column',
-              
-
-
-            },
-          }}>
-            <Button sx={{ background: '#378752', ":hover": { background: '#333333' }, borderRadius: '20px', }} variant="contained">Create Obituary</Button>
-
-
-
-
-            <Button sx={{ background: 'white', ":hover": { background: '#333333', color: 'white' }, borderRadius: '20px', color: '#378752', border: '1px solid #378752 ' }} variant="contained">View Example</Button>
+              },
+            }} >
+            Obituaries Rooted in Love and Memorial Trees
           </Typography>
+          <List>
+            <ul style={{ listStyleType: 'disc', fontSize: '18px' }}>
+              <li>Each Evergreen Obituary is a dynamic canvas where memories come to life and an ever-growing forest of trees begins to flourish.</li>
+              <li>Celebrate their life, share their story, add cherished photos, and plant memorial trees that serve as a living symbol of their legacy.</li>
+              <li>Invite friends and family to contribute memories, photos, and even plant additional trees.
 
+                Start crafting your Evergreen Obituary today..</li>
+            </ul>
+
+          </List>
+          <Box>
+            <Typography display={'flex'} gap={3} sx={{
+              '@media screen and (max-width:480px)': {
+                display: 'flex',
+                flexDirection: 'column',
+
+
+
+              },
+            }}>
+              <Button sx={{ background: '#378752', ":hover": { background: '#333333' }, borderRadius: '20px', }} variant="contained">Create Obituary</Button>
+
+
+
+
+              <Button sx={{ background: 'white', ":hover": { background: '#333333', color: 'white' }, borderRadius: '20px', color: '#378752', border: '1px solid #378752 ' }} variant="contained">View Example</Button>
+            </Typography>
+
+          </Box>
         </Box>
-      </Box>
-      {/* middle 2 box start */}
-      <Box  >
+        {/* middle 2 box start */}
+        <Box  >
           <CardMedia
             component="img"
             image={Sectwo}
@@ -309,11 +324,14 @@ const Homepage = () => {
                 width: '358px',
                 margin: '0 auto'
 
+              }, '@media screen and (max-width:288px)': {
+                width: '100%',
+
               },
             }}
           />
         </Box>
-      {/* middle 2 box end */}
+        {/* middle 2 box end */}
       </Box>
 
       {/* middle Box End */}
@@ -360,6 +378,12 @@ const Homepage = () => {
               sx={{
                 width: '464px', '@media screen and (max-width:462px)': {
                   width: '358px'
+
+                }, '@media screen and (max-width: 356px)': {
+                  width: '320px'
+                },
+                '@media screen and (max-width:288px)': {
+                  width: '275px',
 
                 },
               }}

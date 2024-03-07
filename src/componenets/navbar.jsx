@@ -1,5 +1,5 @@
 import React from 'react';
-import { AppBar, Toolbar, Typography, Button, IconButton, Menu, MenuItem, Box } from '@mui/material';
+import { AppBar, Toolbar, Typography, Button, IconButton, Menu, MenuItem, Box, CardMedia } from '@mui/material';
 import { Search } from '@mui/icons-material';
 import CustomButton from './button';
 import Everlogo from "../assets/everlogo.png"
@@ -31,12 +31,24 @@ const Navbar = () => {
       boxShadow: '0px 4px 5px rgba(0, 0, 0, 0.3)',
       '@media screen and (max-width: 600px)': {
         width: '100%'
+      }, '@media screen and (max-width: 357px)': {
+        width: '100%'
       },
     }}>
       <Toolbar sx={{ justifyContent: 'space-around' }}>
 
-
-        <img src={Everlogo} className='everlogo' alt="" />
+        <CardMedia
+          component="img"
+          image={Everlogo}
+          alt="Your Image"
+          sx={{
+            width: '338px', '@media screen and (max-width: 600px)': {
+              width: '200px'
+            }, '@media screen and (max-width: 300px)': {
+              width: '150px'
+            },
+          }}
+        />
 
         <Button
           variant="text"
