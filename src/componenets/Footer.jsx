@@ -1,10 +1,12 @@
 import React from 'react';
-import { Box, Container, Grid, Typography, IconButton } from '@mui/material';
+import { Box, Container, Grid, Typography, IconButton, AccordionSummary, Accordion, AccordionDetails } from '@mui/material';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import whiteLogo from '../assets/ever.png'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
 
 const Footer = () => {
   return (
@@ -16,75 +18,153 @@ const Footer = () => {
         paddingBottom: "20px", // Increased padding for more space
         width: "full",
         minHeight: "370px", // Set a minimum height to ensure the hr spans the entire width
-        position: 'relative', // Set position to relative
+
       }}
     >
       <Container>
-        <Grid container spacing={3}>
+        <Grid >
           {/* Column 1 - Evergreen */}
           <Grid item xs={12}>
-           <img src={whiteLogo} className='everlogo' alt="" />
+            <img src={whiteLogo} className='everlogo' alt="" />
           </Grid>
 
           {/* Follow Us */}
-          <Grid item xs={12} md={3} sx={{ display: 'flex', flexDirection: 'column' , marginTop: "25px"}}>
-            <Typography variant="h6">Connect :</Typography>
-            <Box sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center' , gap: "10px"}}>
-              <IconButton
-                href="https://www.facebook.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FacebookIcon sx={{ color: 'white' }} />
-              </IconButton>
-              <IconButton
-                href="https://www.instagram.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <InstagramIcon sx={{ color: 'white' }} />
-              </IconButton>
-              <IconButton
-                href="https://twitter.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <TwitterIcon sx={{ color: 'white' }} />
-              </IconButton>
-              <IconButton
-                href="https://www.youtube.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <YouTubeIcon sx={{ color: 'white' }} />
-              </IconButton>
-            </Box>
-          </Grid>
 
-          {/* Columns 2, 3, 4 */}
-        <Grid item xs={12} md={9} sx={ {marginTop: "25px" ,}}>
-            <Grid container spacing={3}>
-              {/* Column 2 */}
-              <Grid item xs={12} md={4}>
-                <Typography variant="h6" fontFamily={'Didot LT Pro, Bold'} fontWeight={600}>Tributes</Typography>
-                <Typography fontFamily={'Didot LT Pro, Bold'}>Create a Tribute</Typography>
-              </Grid>
 
-              {/* Column 3 */}
-              <Grid item xs={12} md={4}>
-                <Typography variant="h6" fontFamily={'Didot LT Pro, Bold'} fontWeight={600}>About</Typography>
-                <Typography sx={{marginTop:"4px"}} fontFamily={'Didot LT Pro, Bold'}>About Everyone Tribute</Typography>
-                <Typography sx={{marginTop:"4px"}} fontFamily={'Didot LT Pro, Bold'}>How It Works</Typography>
-                <Typography sx={{marginTop:"4px"}} fontFamily={'Didot LT Pro, Bold'}>FAQ</Typography>
-              </Grid>
+          <Box sx={{
+            display: 'flex', alignItems: 'center', justifyContent: 'space-evenly',
 
-              {/* Column 4 */}
-              <Grid item xs={12} md={4}>
-                <Typography variant="h6" fontFamily={'Didot LT Pro, Bold'} fontWeight={600}>Support</Typography>
-                <Typography sx={{marginTop:"4px"}} fontFamily={'Didot LT Pro, Bold'}>Contact Us</Typography>
+
+            '@media (max-width: 970px)': {
+              display: 'flex',
+              flexDirection: 'column-reverse'
+            },
+          }}>
+            <Grid  sx={{
+              display: 'flex',
+              flexDirection: 'column', marginTop: "25px",
+            }}>
+              <Typography variant="h6">Connect :</Typography>
+              <Box sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: "10px" }}>
+                <IconButton
+                  href="https://www.facebook.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FacebookIcon sx={{ color: 'white' }} />
+                </IconButton>
+                <IconButton
+                  href="https://www.instagram.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <InstagramIcon sx={{ color: 'white' }} />
+                </IconButton>
+                <IconButton
+                  href="https://twitter.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <TwitterIcon sx={{ color: 'white' }} />
+                </IconButton>
+                <IconButton
+                  href="https://www.youtube.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <YouTubeIcon sx={{ color: 'white' }} />
+                </IconButton>
+              </Box>
+            </Grid>
+
+
+            <Grid item xs={12} md={9} sx={{
+              marginTop: "25px",
+              '@media (max-width: 710px)': {
+                display: 'none'
+              },
+            }}>
+
+              <Grid display={'flex'} alignItems={'cenetr'} justifyContent={'center'} gap={20} >
+
+                <Grid item xs={12} md={4}>
+                  <Typography variant="h6" fontFamily={'Didot LT Pro, Bold'} fontWeight={600}>Tributes</Typography>
+                  <Typography fontFamily={'Didot LT Pro, Bold'}>Create a Tribute</Typography>
+                </Grid>
+
+
+                <Grid item xs={12} md={4}>
+                  <Typography variant="h6" fontFamily={'Didot LT Pro, Bold'} fontWeight={600}>About</Typography>
+                  <Typography sx={{ marginTop: "4px" }} fontFamily={'Didot LT Pro, Bold'}>About Everyone Tribute</Typography>
+                  <Typography sx={{ marginTop: "4px" }} fontFamily={'Didot LT Pro, Bold'}>How It Works</Typography>
+                  <Typography sx={{ marginTop: "4px" }} fontFamily={'Didot LT Pro, Bold'}>FAQ</Typography>
+                </Grid>
+
+
+                <Grid item xs={12} md={4}>
+                  <Typography variant="h6" fontFamily={'Didot LT Pro, Bold'} fontWeight={600}>Support</Typography>
+                  <Typography sx={{ marginTop: "4px" }} fontFamily={'Didot LT Pro, Bold'}>Contact Us</Typography>
+                </Grid>
               </Grid>
             </Grid>
-          </Grid>
+
+            <Accordion sx={{
+              width: '100%', background: 'transparent', display: 'none', '@media (max-width: 710px)': {
+                display: 'block'
+              },
+              border: 'none',
+              borderBottom: '1px solid white'
+            }}>
+              <AccordionSummary id="panel-header" aria-controls="panel-content" sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-around' }} >
+                <Typography variant="h6" color={'white'} fontFamily={'Didot LT Pro, Bold'} fontWeight={600}>Support</Typography>
+              </AccordionSummary>
+              <AccordionDetails>
+                <Typography color={'white'} sx={{ marginTop: "4px" }} fontFamily={'Didot LT Pro, Bold'}>Contact Us</Typography>
+              </AccordionDetails>
+            </Accordion>
+
+
+
+            <Accordion sx={{
+              width: '100%', background: 'transparent', display: 'none', '@media (max-width: 710px)': {
+                display: 'block'
+              },
+              border: 'none',
+              borderBottom: '1px solid white'
+            }}>
+              <AccordionSummary id="panel-header" aria-controls="panel-content" sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-around' }} >
+                <Typography variant="h6" color={'white'} fontFamily={'Didot LT Pro, Bold'} fontWeight={600}>About</Typography>
+
+              </AccordionSummary>
+              <AccordionDetails>
+                <Typography sx={{ marginTop: "4px", color: 'white' }} fontFamily={'Didot LT Pro, Bold'}>About Everyone Tribute</Typography>
+                <Typography sx={{ marginTop: "4px", color: 'white' }} fontFamily={'Didot LT Pro, Bold'}>How It Works</Typography>
+                <Typography sx={{ marginTop: "4px", color: 'white' }} fontFamily={'Didot LT Pro, Bold'}>FAQ</Typography>
+              </AccordionDetails>
+            </Accordion>
+
+
+            <Accordion sx={{
+              width: '100%', background: 'transparent', display: 'none', '@media (max-width: 710px)': {
+                display: 'block'
+              },
+              border: 'none',
+              borderBottom: '1px solid white'
+            }}>
+              <AccordionSummary id="panel-header" aria-controls="panel-content" sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-around' }} >
+                <Typography variant="h6" color={'white'} fontFamily={'Didot LT Pro, Bold'} fontWeight={600}>Tributes</Typography>
+              </AccordionSummary>
+              <AccordionDetails>
+                <Typography color={'white'} fontFamily={'Didot LT Pro, Bold'}>Create a Tribute</Typography>
+              </AccordionDetails>
+            </Accordion>
+
+          </Box>
+
+
+
+
+
         </Grid>
 
         {/* Horizontal Line */}
@@ -93,7 +173,7 @@ const Footer = () => {
             borderColor: 'white',
             width: '100%', // Span the entire width
             margin: '20px 0',
-            marginTop : "85px",
+            marginTop: "85px",
             boxSizing: 'content-box' // Add margin to make it visible
           }}
         />
