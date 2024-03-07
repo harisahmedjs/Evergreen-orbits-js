@@ -6,12 +6,15 @@ import Navbar from './componenets/navbar'
 
 
 
+
+
  
 
 const App = () => {
   return (
 
     <>
+    
 <Navbar />
     
       <Homepage />
@@ -19,6 +22,7 @@ const App = () => {
 
       
       {/* <Footer /> */}
+
 
     </>
 

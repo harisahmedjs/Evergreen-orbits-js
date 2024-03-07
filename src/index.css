@@ -12,4 +12,33 @@
     width: 300px;
 }
 
+.sec4-span{
+    margin-left: 32px;
+}
+.sec4--span{
+    margin-top: 40px;
+}
+.btn {
+    border: none;
+    /* border-bottom: 2px solid transparent; */
+    background-color: transparent;
+    cursor: pointer;
+    padding: 8px 16px;
+    margin: 0 8px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    transition: border-bottom 0.3s ease;
+    color: #999999;
+  }
+  
+  
+  .btn:focus {
+    border-bottom: 2px solid black;
+    outline: none;
+    font-style: bold  ;
+  }
+  
+  
+  
 
